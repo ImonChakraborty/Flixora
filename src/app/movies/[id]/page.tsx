@@ -2,6 +2,7 @@ import { getMovieDetails } from '@/lib/tmdb';
 import { MovieDetails, CastMember, CrewMember, Video, Genre, ProductionCompany } from '@/lib/types';
 import OptimizedImage from '@/components/OptimizedImage';
 import Link from 'next/link';
+import { Star, Play, Clock } from 'lucide-react';
 
 interface MovieDetailsPageProps {
     params: Promise<{ id: string }>;
@@ -43,9 +44,7 @@ export default async function MovieDetailsPage({ params }: MovieDetailsPageProps
                             {movie.adult ? '18+' : 'PG-13'}
                         </span>
                         <div className="flex items-center space-x-1">
-                            <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
+                            <Star className="w-5 h-5 text-yellow-400" fill="currentColor" />
                             <span className="text-lg">{movie.vote_average.toFixed(1)}</span>
                         </div>
                     </div>
@@ -53,18 +52,14 @@ export default async function MovieDetailsPage({ params }: MovieDetailsPageProps
                     <div className="flex space-x-4">
                         <Link href={`/watch/movie/${movie.id}`}>
                             <button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-gray-900 font-bold py-3 px-6 rounded-lg flex items-center space-x-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/25">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                    <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clipRule="evenodd" />
-                                </svg>
+                                <Play className="w-6 h-6" fill="currentColor" />
                                 <span>Play</span>
                             </button>
                         </Link>
                         {trailer && (
                             <Link href={`https://www.youtube.com/watch?v=${trailer.key}`} target="_blank">
                                 <button className="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg flex items-center space-x-2 transition-all duration-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9A2.25 2.25 0 0 0 13.5 5.25h-9a2.25 2.25 0 0 0-2.25 2.25v9A2.25 2.25 0 0 0 4.5 18.75Z" />
-                                    </svg>
+                                    <Play className="w-6 h-6" />
                                     <span>Trailer</span>
                                 </button>
                             </Link>

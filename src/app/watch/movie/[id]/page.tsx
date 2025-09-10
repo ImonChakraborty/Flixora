@@ -3,6 +3,7 @@ import { MovieDetails } from '@/lib/types';
 import VideoPlayer from '@/components/VideoPlayer';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ChevronLeft } from 'lucide-react';
 
 interface WatchMoviePageProps {
     params: Promise<{ id: string }>;
@@ -20,7 +21,7 @@ export default async function WatchMoviePage({ params }: WatchMoviePageProps) {
         }
 
         return (
-            <div className="relative h-screen w-screen bg-black">
+            <div className="relative min-h-screen w-full bg-black">
                 {/* Floating Navigation Bar */}
                 <div className="absolute top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/80 to-transparent">
                     <div className="flex items-center justify-between p-4">
@@ -28,9 +29,7 @@ export default async function WatchMoviePage({ params }: WatchMoviePageProps) {
                             href={`/movies/${id}`}
                             className="flex items-center space-x-2 text-white hover:text-amber-400 transition-colors"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
+                            <ChevronLeft className="h-6 w-6" />
                             <span className="font-medium">Back to Details</span>
                         </Link>
                         
@@ -49,7 +48,7 @@ export default async function WatchMoviePage({ params }: WatchMoviePageProps) {
                 <VideoPlayer
                     type="movie"
                     tmdbId={movieId}
-                    className="h-screen w-screen"
+                    className="w-full"
                     color="F59E0B"
                     backdropPath={movie.backdrop_path}
                     title={movie.title}

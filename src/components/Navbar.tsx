@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import SearchSuggestions from './SearchSuggestions';
+import { Search, X } from 'lucide-react';
 
 export default function Navbar() {
   const router = useRouter();
@@ -100,9 +101,7 @@ export default function Navbar() {
                   className="w-full px-4 py-3 rounded-xl glass text-white placeholder-gray-300 focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 outline-none transition-all duration-300 text-sm shadow-lg focus:shadow-amber-500/25 pl-12 backdrop-blur-sm"
                 />
                 <button type="submit" className="absolute left-4 top-1/2 -translate-y-1/2 p-1 text-gray-300 hover:text-amber-400 transition-all duration-300 hover:scale-110" aria-label="Search">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                  </svg>
+                  <Search className="w-5 h-5" />
                 </button>
               </form>
               
@@ -140,9 +139,7 @@ export default function Navbar() {
                 className="w-full p-4 pl-12 rounded-xl glass text-white placeholder-gray-300 focus:ring-2 focus:ring-amber-500/50 outline-none transition-all duration-300 text-sm shadow-lg"
               />
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                  </svg>
+                  <Search className="w-5 h-5" />
               </div>
             </div>
           </form>

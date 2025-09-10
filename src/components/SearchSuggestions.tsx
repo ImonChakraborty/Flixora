@@ -3,6 +3,7 @@
 import OptimizedImage from './OptimizedImage';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { Film, Star, TrendingUp, ArrowRight, Search } from 'lucide-react';
 
 interface Suggestion {
   id: number;
@@ -87,9 +88,7 @@ export default function SearchSuggestions({ query, onSelect, onClose, isVisible 
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                      </svg>
+                      <Film className="w-6 h-6 text-gray-500" />
                     </div>
                   )}
                 </div>
@@ -110,9 +109,7 @@ export default function SearchSuggestions({ query, onSelect, onClose, isVisible 
                       <>
                         <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
                         <div className="flex items-center space-x-1">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-yellow-400">
-                            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.116 3.588 1.219 5.271c.276 1.184-.976 2.133-2.063 1.539l-4.816-2.848L6.98 21.352c-1.087.594-2.34-.355-2.063-1.539l1.219-5.271-4.116-3.588c-.887-.76-.415-2.212.749-2.305l5.404-.434L10.788 3.21Z" clipRule="evenodd" />
-                          </svg>
+                          <Star className="w-3 h-3 text-yellow-400" fill="currentColor" />
                           <span className="text-xs text-yellow-400">
                             {suggestion.vote_average.toFixed(1)}
                           </span>
@@ -123,9 +120,7 @@ export default function SearchSuggestions({ query, onSelect, onClose, isVisible 
                 </div>
 
                 <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-amber-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                  </svg>
+                  <ArrowRight className="w-4 h-4 text-amber-400" />
                 </div>
               </Link>
             );
@@ -138,18 +133,14 @@ export default function SearchSuggestions({ query, onSelect, onClose, isVisible 
               className="flex items-center justify-center space-x-2 px-4 py-3 hover:bg-white/5 transition-all duration-200 border-t border-gray-700/30 text-amber-400 hover:text-amber-300 group"
             >
               <span className="text-sm font-medium">See all results for &quot;{query}&quot;</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           )}
         </div>
       ) : query.trim().length >= 2 ? (
         <div className="p-4 text-center">
           <div className="flex flex-col items-center space-y-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-gray-500">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
+            <Search className="w-8 h-8 text-gray-500" />
             <span className="text-gray-400 text-sm">No suggestions found</span>
             <Link
               href={`/search?q=${encodeURIComponent(query)}`}
