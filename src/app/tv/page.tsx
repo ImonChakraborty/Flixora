@@ -16,7 +16,7 @@ export default async function TvShowsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 pt-24">
-      <h1 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500">
+      <h1 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-red-500 to-pink-500">
         Discover TV Shows
       </h1>
 
