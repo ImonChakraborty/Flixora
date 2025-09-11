@@ -2,7 +2,7 @@ import { getTVShowDetails } from '@/lib/tmdb';
 import { TVShowDetails, CastMember, Video, Genre, ProductionCompany, CreatedBy, Season, Network } from '@/lib/types';
 import OptimizedImage from '@/components/OptimizedImage';
 import Link from 'next/link';
-import { Star, Play, Film, Clock } from 'lucide-react';
+import { Star, Play, Film, Clock, Disc } from 'lucide-react';
 
 interface TVShowDetailsPageProps {
     params: Promise<{ id: string }>;
@@ -60,7 +60,7 @@ export default async function TVShowDetailsPage({ params }: TVShowDetailsPagePro
                         {trailer && (
                             <Link href={`https://www.youtube.com/watch?v=${trailer.key}`} target="_blank">
                                 <button className="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg flex items-center space-x-2 transition-all duration-300">
-                                    <Play className="w-6 h-6" />
+                                    <Disc className="w-6 h-6" />
                                     <span>Trailer</span>
                                 </button>
                             </Link>
