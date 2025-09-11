@@ -2,7 +2,7 @@ import { getMovieDetails } from '@/lib/tmdb';
 import { MovieDetails, CastMember, CrewMember, Video, Genre, ProductionCompany } from '@/lib/types';
 import OptimizedImage from '@/components/OptimizedImage';
 import Link from 'next/link';
-import { Star, Play, Clock, Disc } from 'lucide-react';
+import { Star, Play, Disc } from 'lucide-react';
 
 interface MovieDetailsPageProps {
     params: Promise<{ id: string }>;

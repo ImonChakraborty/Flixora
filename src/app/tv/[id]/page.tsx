@@ -2,7 +2,7 @@ import { getTVShowDetails } from '@/lib/tmdb';
 import { TVShowDetails, CastMember, Video, Genre, ProductionCompany, CreatedBy, Season, Network } from '@/lib/types';
 import OptimizedImage from '@/components/OptimizedImage';
 import Link from 'next/link';
-import { Star, Play, Film, Clock, Disc } from 'lucide-react';
+import { Star, Play, Film, Disc } from 'lucide-react';
 
 interface TVShowDetailsPageProps {
     params: Promise<{ id: string }>;

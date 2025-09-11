@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import SearchSuggestions from './SearchSuggestions';
-import { Search, X } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 export default function Navbar() {
   const router = useRouter();

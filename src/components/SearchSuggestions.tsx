@@ -3,7 +3,7 @@
 import OptimizedImage from './OptimizedImage';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Film, Star, TrendingUp, ArrowRight, Search } from 'lucide-react';
+import { Film, Star, ArrowRight, Search } from 'lucide-react';
 
 interface Suggestion {
   id: number;

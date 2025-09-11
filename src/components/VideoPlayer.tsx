@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+// import Image from 'next/image';
 import { Provider } from '@/providercontext/types';
+import { Movie, Series } from '@/lib/types';
 import { agent } from '@/providercontext/agent';
 import { vidsrc } from '@/providercontext/vidsrc';
 import { embedsu } from '@/providercontext/embedsu';
@@ -48,20 +50,20 @@ export default function VideoPlayer({
   tmdbId,
   season,
   episode,
-  className = '',
-  color = '8B5CF6',
-  autoplayNextEpisode = false,
-  episodeSelector = false,
-  nextEpisode = false,
-  startTime,
+  // className = '', // eslint-disable-line @typescript-eslint/no-unused-vars
+  // color = '8B5CF6', // eslint-disable-line @typescript-eslint/no-unused-vars
+  // autoplayNextEpisode = false, // eslint-disable-line @typescript-eslint/no-unused-vars
+  // episodeSelector = false, // eslint-disable-line @typescript-eslint/no-unused-vars
+  // nextEpisode = false, // eslint-disable-line @typescript-eslint/no-unused-vars
+  // startTime, // eslint-disable-line @typescript-eslint/no-unused-vars
   backdropPath,
   title,
   autoStart = false,
-  genres = [],
+  // genres = [],
 }: VideoPlayerProps) {
   const [isVisible, setIsVisible] = useState(autoStart);
   const [selectedProvider, setSelectedProvider] = useState<Provider | null>(null);
-  const [recommendations, setRecommendations] = useState<any[]>([]);
+  const [recommendations, setRecommendations] = useState<(Movie | Series)[]>([]);
 
   // Set the first provider when providers are loaded
   useEffect(() => {
@@ -252,7 +254,7 @@ export default function VideoPlayer({
                         {item.poster_path ? (
                           <img
                             src={`https://image.tmdb.org/t/p/w342${item.poster_path}`}
-                            alt={item.title || item.name}
+                            alt={'title' in item ? item.title : item.name}
                             className="w-full h-full object-cover"
                           />
                         ) : (
@@ -262,7 +264,7 @@ export default function VideoPlayer({
                         )}
                       </div>
                       <h3 className="text-sm font-medium text-gray-300 mt-3 group-hover:text-white transition-colors line-clamp-2 text-center">
-                        {item.title || item.name}
+                        {'title' in item ? item.title : item.name}
                       </h3>
                     </a>
                   ))}
