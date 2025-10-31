@@ -6,14 +6,15 @@ import { Provider } from '@/providercontext/types';
 import { Movie, Series } from '@/lib/types';
 import { agent } from '@/providercontext/agent';
 import { vidsrc } from '@/providercontext/vidsrc';
-import { embedsu } from '@/providercontext/embedsu';
+// import { embedsu } from '@/providercontext/embedsu'; // doesnt work, disabled till it is fixed
 import { vidlink } from '@/providercontext/vidlink';
 import { smashy } from '@/providercontext/smashy';
-import { moviekex } from '@/providercontext/moviekex';
+// import { moviekex } from '@/providercontext/moviekex'; // doesnt work, disabled till it is fixed
+import { vidora } from '@/providercontext/vidora';
 import { Play, Star, Film } from 'lucide-react';
 
 // Create providers array directly
-const allProviders: Provider[] = [agent, vidsrc, embedsu, vidlink, smashy, moviekex];
+const allProviders: Provider[] = [agent, vidsrc, vidlink, smashy, vidora];
 
 // Debug log to check if providers are loaded
 console.log('Providers loaded:', allProviders);
