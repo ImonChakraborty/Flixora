@@ -5,9 +5,9 @@ export const vidsrc: Provider = {
   rank: 2,
   disabled: false,
   getMovie: (id: string) => {
-    return `https://vidsrc.net/embed/movie/${id}`;
+    return `https://vsrc.su/embed/movie/${id}`;
   },
   getEpisode: (id: string, season: number, episode: number) => {
-    return `https://vidsrc.net/embed/tv/${id}/${season}/${episode}`;
+    return `https://vsrc.su/embed/tv/${id}/${season}/${episode}`;
   },
 };
