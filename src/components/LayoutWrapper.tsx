@@ -24,14 +24,6 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
     <>
       <Navbar />
       <main className="min-h-screen relative">
-        {/* Background pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0)`,
-            backgroundSize: "24px 24px",
-          }}
-        ></div>
         <div className="relative z-10">{children}</div>
       </main>
       <footer className="relative z-10 text-center py-12 border-t border-gray-700/30 glass">
