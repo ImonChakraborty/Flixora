@@ -1,3 +1,4 @@
+import AnimatedDotsBackground from "@/components/AnimatedDotsBackground";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import "./globals.css";
@@ -26,13 +27,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 antialiased min-h-screen`}>
-        <PerformanceOptimizer />
-        <LayoutWrapper>
-          <div className="scroll-container">
-            {children}
-          </div>
-        </LayoutWrapper>
+      <body className={`${inter.className} bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 antialiased min-h-screen relative`}>
+        <AnimatedDotsBackground />
+        <div className="relative z-[1]">
+          <PerformanceOptimizer />
+          <LayoutWrapper>
+            <div className="scroll-container">
+              {children}
+            </div>
+          </LayoutWrapper>
+        </div>
       </body>
     </html>
   );
