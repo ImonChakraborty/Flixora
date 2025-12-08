@@ -3,10 +3,11 @@ import LayoutWrapper from "@/components/LayoutWrapper";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Flixora - Stream Movies & Series",
   description:
     "Your ultimate destination for streaming movies and TV series. Discover trending content, top-rated films, and popular shows.",

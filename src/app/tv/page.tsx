@@ -3,8 +3,9 @@ import Section from '@/components/Section';
 import ContentCard from '@/components/ContentCard';
 import { getPopularTvShows, getTopRatedTvShows, getAiringTodayTvShows } from '@/lib/tmdb';
 import { Series } from '@/lib/types';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'TV Shows | FLIXORA',
   description: 'Discover popular, top-rated, and airing today TV shows.',
 };

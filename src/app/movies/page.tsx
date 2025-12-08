@@ -3,8 +3,9 @@ import Section from '@/components/Section';
 import ContentCard from '@/components/ContentCard';
 import { getPopularMovies, getTopRatedMovies, getUpcomingMovies } from '@/lib/tmdb';
 import { Movie } from '@/lib/types';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Movies | FLIXORA',
   description: 'Explore popular, top-rated, and upcoming movies.',
 };
